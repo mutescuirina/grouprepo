@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
-require('dotenv').config()
+// require('dotenv').config()
 const PORT = 3000
 const MONGODB_URI = 'mongodb://localhost:27017'+ '/towns'
 
@@ -33,12 +33,11 @@ mongoose.connection.once('open', () => {
   console.log('connected to mongoose...')
 })
 
-app.get('/', (req, res) => {
-    res.send("Hello World")
-})
-app.get('/towns', (req,res )=>{
-    res.send('Towns rocks')
-})
+
+
+//Controller/Routes
+const townsController = require('./controllers/towns')
+app.use('/towns', townsController)
 
 app.listen(PORT, () => {
     console.log('listening on port ' + PORT)
