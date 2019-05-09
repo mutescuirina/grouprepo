@@ -8,7 +8,7 @@ const PORT = 3000
 const MONGODB_URI = 'mongodb://localhost:27017'+ '/towns'
 
 
-const whitelist = ['http://localhost:3003', 'https://fathomless-sierra-68956.herokuapp.com']
+const whitelist = ['http://localhost:3001', 'https://fathomless-sierra-68956.herokuapp.com']
 const corsOptions = {
   origin (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
